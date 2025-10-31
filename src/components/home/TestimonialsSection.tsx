@@ -1,27 +1,28 @@
 import { useEffect, useState, useRef } from "react";
 
 const imagePaths: Record<string, string> = {
-  "Dakannagari Rohith Reddy": "/images/DAKANNAGARI ROHITH REDDY  (USA).jpeg",
-  "Aninash Yadav": "/images/ANINASH YADAV  (UK).jpeg",
-  "Duddempudi Sahana": "/images/DUDDEMPUDI SAHANA  (USA).jpeg",
-  "Asar Ali Mohammed": "/images/ASAR ALI MOHAMMED  (UK).jpeg",
-  "Moghal Saheera Begum": "/images/MOGHAL SAHEERA BEGUM  (UK).jpeg",
-  "Harsha Vardhan Reddy": "/images/HARSHA VARDHAN REDDY (USA).jpeg",
-  "Ashritha Reddy Beerelly": "/images/ASHRITHA REDDY BEERELLY (UK).jpeg",
+  "Dakannagari Rohith Reddy":
+    "assets/images/DAKANNAGARI ROHITH REDDY  (USA).jpeg",
+  "Aninash Yadav": "assets/images/ANINASH YADAV  (UK).jpeg",
+  "Duddempudi Sahana": "assets/images/DUDDEMPUDI SAHANA  (USA).jpeg",
+  "Asar Ali Mohammed": "assets/images/ASAR ALI MOHAMMED  (UK).jpeg",
+  "Moghal Saheera Begum": "assets/images/MOGHAL SAHEERA BEGUM  (UK).jpeg",
+  "Harsha Vardhan Reddy": "assets/images/HARSHA VARDHAN REDDY (USA).jpeg",
+  "Ashritha Reddy Beerelly": "assets/images/ASHRITHA REDDY BEERELLY (UK).jpeg",
   "Kannikanti Geethika Chowdary":
-    "/images/KANNIKANTI GEETHIKA CHOWDARY (USA).jpeg",
-  "Bojja Glory": "/images/BOJJA GLORY (UK).jpeg",
-  "Khyathi Raguru": "/images/KHYATHI RAGURU (USA).jpeg",
-  "Deekshith Kumar Gudepu": "/images/DEEKSHITH KUMAR GUDEPU (UK).jpeg",
-  "Nithya Sree Bussu": "/images/NITHYA SREE BUSSU (USA).jpeg",
-  "Kathi Tulasi": "/images/KATHI TULASI (UK).jpeg",
-  "Preethi Kalva": "/images/PREETHI KALVA (USA).jpeg",
-  "Sravya Sree Bussu": "/images/SRAVYA SREE BUSSU (USA).jpeg",
-  "Pakala Meghana Reddy": "/images/PAKALA MEGHANA REDDY (UK).jpeg",
-  "Soumya Gopagoni": "/images/SOUMYA GOPAGONI (UK).jpeg",
-  "Adavalli Tharun Kumar": "/images/ADAVALLI THARUN KUMAR (UK).jpeg",
-  "Ummagani Sai Kumar": "/images/UMMAGANI SAI KUMAR (UK).jpeg",
-  Priyanka: "/images/Priyanka.jpg",
+    "assets/images/KANNIKANTI GEETHIKA CHOWDARY (USA).jpeg",
+  "Bojja Glory": "assets/images/BOJJA GLORY (UK).jpeg",
+  "Khyathi Raguru": "assets/images/KHYATHI RAGURU (USA).jpeg",
+  "Deekshith Kumar Gudepu": "assets/images/DEEKSHITH KUMAR GUDEPU (UK).jpeg",
+  "Nithya Sree Bussu": "assets/images/NITHYA SREE BUSSU (USA).jpeg",
+  "Kathi Tulasi": "assets/images/KATHI TULASI (UK).jpeg",
+  "Preethi Kalva": "assets/images/PREETHI KALVA (USA).jpeg",
+  "Sravya Sree Bussu": "assets/images/SRAVYA SREE BUSSU (USA).jpeg",
+  "Pakala Meghana Reddy": "assets/images/PAKALA MEGHANA REDDY (UK).jpeg",
+  "Soumya Gopagoni": "assets/images/SOUMYA GOPAGONI (UK).jpeg",
+  "Adavalli Tharun Kumar": "assets/images/ADAVALLI THARUN KUMAR (UK).jpeg",
+  "Ummagani Sai Kumar": "assets/images/UMMAGANI SAI KUMAR (UK).jpeg",
+  Priyanka: "assets/images/Priyanka.jpg",
 };
 
 const testimonialsData = [

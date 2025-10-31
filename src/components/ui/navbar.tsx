@@ -139,12 +139,12 @@ export function Navbar() {
           <img
             alt="Vsource Logo"
             className="h-16 md:h-20 w-auto object-contain rounded-xl"
-            src="/images/vsourcess.png"
+            src="/assets/images/vsourcess.png"
           />
           <img
             alt="Vsource Logo"
             className="h-16 md:h-20 w-auto object-contain rounded-xl"
-            src="/images/20 years logo-01.png"
+            src="/assets/images/20 years logo-01.png"
           />
         </Link>
 

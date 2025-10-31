@@ -565,7 +565,7 @@ const AboutPage = () => {
       <section
         className="pt-40 pb-36 bg-cover bg-center bg-no-repeat relative text-white"
         style={{
-          backgroundImage: `url(/images/about-banner.jpg)`,
+          backgroundImage: `url(assets/images/about-banner.jpg)`,
         }}
       >
         {/* Dark overlay gradient */}
