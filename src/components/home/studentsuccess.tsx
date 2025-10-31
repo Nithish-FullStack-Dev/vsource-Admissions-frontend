@@ -1,6 +1,6 @@
 // StudentWall.jsx
-import BannerSkeleton from "@/Loaders/about-us/BannerSkeleton";
 import { Students } from "@/lib/types/Gallery";
+import BannerSkeleton from "@/Loaders/about-us/BannerSkeleton";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React from "react";
@@ -148,7 +148,7 @@ const StudentWall = () => {
             students?.students_images.map((img, index) => (
               <img
                 key={img?.id || index}
-                src={img?.url}
+                src={`${import.meta.env.VITE_CMS_GLOBALURL}${img?.url}`}
                 alt={`Student ${index + 1}`}
               />
             ))}

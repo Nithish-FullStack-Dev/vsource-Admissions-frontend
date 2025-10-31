@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -28,6 +28,10 @@ import UniversityTbilisiStateMedical from "./pages/University-Pages/UniversityTb
 import UniversityIliaState from "./pages/University-Pages/UniversityIliaState";
 import UniversityAkakiTsereteliState from "./pages/University-Pages/UniversityAkakiTsereteliState";
 import UniversityBelgorodStateNationalResearch from "./pages/University-Pages/UniversityBelgorodStateNationalResearch";
+import HeroLoader from "./components/loaders/HeroLoader";
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const View360 = lazy(() => import("./pages/View360"));
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -80,43 +84,47 @@ const AppContent = () => {
       <div className="flex flex-col min-h-screen">
         {!isGoVirtualPage && <Navbar />}
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
+          <Suspense fallback={<HeroLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-              path="/mbbs-abroad/georgia/university-of-georgia"
-              element={<UniversityGeorgia />}
-            />
-            <Route
-              path="/mbbs-abroad/georgia/ken-walker-international-university"
-              element={<UniversityKenWalker />}
-            />
-            <Route
-              path="/mbbs-abroad/georgia/tbilisi-state-medical-university"
-              element={<UniversityTbilisiStateMedical />}
-            />
-            <Route
-              path="/mbbs-abroad/georgia/tbilisi-state-medical-university"
-              element={<UniversityTbilisiStateMedical />}
-            />
-            <Route
-              path="/mbbs-abroad/georgia/ilia-state-university"
-              element={<UniversityIliaState />}
-            />
-            <Route
-              path="/mbbs-abroad/georgia/akaki-tsereteli-state-university"
-              element={<UniversityAkakiTsereteliState />}
-            />
-            <Route
-              path="/mbbs-abroad/russia/belgorod-state-national-research-university"
-              element={<UniversityBelgorodStateNationalResearch />}
-            />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="/view-360" element={<View360 />} />
+              <Route
+                path="/mbbs-abroad/georgia/university-of-georgia"
+                element={<UniversityGeorgia />}
+              />
+              <Route
+                path="/mbbs-abroad/georgia/ken-walker-international-university"
+                element={<UniversityKenWalker />}
+              />
+              <Route
+                path="/mbbs-abroad/georgia/tbilisi-state-medical-university"
+                element={<UniversityTbilisiStateMedical />}
+              />
+              <Route
+                path="/mbbs-abroad/georgia/tbilisi-state-medical-university"
+                element={<UniversityTbilisiStateMedical />}
+              />
+              <Route
+                path="/mbbs-abroad/georgia/ilia-state-university"
+                element={<UniversityIliaState />}
+              />
+              <Route
+                path="/mbbs-abroad/georgia/akaki-tsereteli-state-university"
+                element={<UniversityAkakiTsereteliState />}
+              />
+              <Route
+                path="/mbbs-abroad/russia/belgorod-state-national-research-university"
+                element={<UniversityBelgorodStateNationalResearch />}
+              />
 
-            <Route path="/meeting" element={<GoVirtual />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="/meeting" element={<GoVirtual />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </main>
 
         {!isGoVirtualPage && <ContactBar />}

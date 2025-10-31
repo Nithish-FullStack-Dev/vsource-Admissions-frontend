@@ -226,14 +226,9 @@ export function Navbar() {
             </div>
           </div>
 
-          <a
-            href="https://vsourceoverseas.com/360View/"
-            target="_blank"
-            rel="noreferrer"
-            className={linkCls(isActive("/360-view"))}
-          >
+          <Link to="/view-360" className={linkCls(isActive("/view-360"))}>
             360_VIEW
-          </a>
+          </Link>
           <Link to="/gallery" className={linkCls(isActive("/gallery"))}>
             GALLERY
           </Link>
