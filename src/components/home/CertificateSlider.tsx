@@ -8,53 +8,53 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
-    image: "assets/images/cert/cert9.jpg",
+    image: "/images/cert/cert9.jpg",
     title: "Certificate of Partnership",
     description:
       "Authorizes VSource as student recruiter for Dai Nam University.",
   },
   {
-    image: "assets/images/cert/cert8.jpg",
+    image: "/images/cert/cert8.jpg",
     title: "Certificate of Partnership",
     description:
       "Authorizes VSource as recruiting agent for Ken Walker International University.",
   },
   {
-    image: "assets/images/cert/cert7.jpg",
+    image: "/images/cert/cert7.jpg",
     title: "Certificate of Partnership",
     description:
       "Certifies VSource Educational Services as recruiting agent for University of Georgia.",
   },
   {
-    image: "assets/images/cert/cert1.jpg",
+    image: "/images/cert/cert1.jpg",
     title: "Extract from Registry of Legal Entities",
     description: "Proof of company registration in Georgia Public Registry.",
   },
   {
-    image: "assets/images/cert/cert6.jpg",
+    image: "/images/cert/cert6.jpg",
     title: "Certificate of Incorporation",
     description: "Proof of VSource legal incorporation in India.",
   },
   {
-    image: "assets/images/cert/cert5.jpg",
+    image: "/images/cert/cert5.jpg",
     title: "Certificate of Partnership",
     description:
       "Recognizes VSource as student recruitment agent for Belgorod State National Research University.",
   },
   {
-    image: "assets/images/cert/cert4.jpg",
+    image: "/images/cert/cert4.jpg",
     title: "Russian Tax Registration Certificate",
     description:
       "Confirms tax registration of VSource-IND in Russia (Belgorod).",
   },
   {
-    image: "assets/images/cert/cert2.jpg",
+    image: "/images/cert/cert2.jpg",
     title: "Certificate of Authorization",
     description:
       "Authorizes VSource to recruit for Caucasus International University.",
   },
   {
-    image: "assets/images/cert/cert3.jpg",
+    image: "/images/cert/cert3.jpg",
     title: "Certificate of Partnership",
     description:
       "Authorizes VSource to recruit for University of Georgia programs.",

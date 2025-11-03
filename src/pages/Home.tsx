@@ -3,12 +3,15 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Link as RouterLink } from "react-router-dom";
 import AboutSection from "./AboutSection";
 import Accreditation from "./AccreditationSection";
-import Journey from "@/components/home/Journey";
+// import Journey from "@/components/home/Journey";
 import TrustSection from "@/components/home/TrustSection";
 import CertificateSlider from "@/components/home/CertificateSlider";
 import VideoSection from "@/components/VideoSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CertificateBentoGrid from "@/components/home/CertificateSlider";
+// import JourneyCard from "@/utils/JourneyCard";
+
+import Journey from "@/pages/Journet.tsx";
 
 type Slide = {
   img: string;
@@ -124,7 +127,7 @@ function Home() {
         <div
           className="hidden sm:block absolute inset-0 bg-no-repeat bg-cover bg-center shrink-0"
           style={{
-            backgroundImage: `url(/assets/images/admission-banner.jpg)`,
+            backgroundImage: `url(/images/admission-banner.jpg)`,
           }}
         >
           <div className="absolute inset-0 bg-black/20" />
@@ -135,7 +138,7 @@ function Home() {
           <div
             className="absolute inset-0 bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url(/assets/images/admission-mobile.jpg)`,
+              backgroundImage: `url(/images/admission-mobile.jpg)`,
             }}
           >
             {/* <div className="absolute inset-0 bg-black/60" /> */}
@@ -168,7 +171,7 @@ function Home() {
                   medical education.
                 </p>
                 <img
-                  src="/assets/images/20 years logo.png"
+                  src="/images/20 years logo.png"
                   alt="20 Years Logo"
                   className="w-20 h-auto mt-4 "
                 />
@@ -201,7 +204,7 @@ function Home() {
             </p>
             <div className="flex justify-start pt-6">
               <img
-                src="/assets/images/20 years logo.png"
+                src="/images/20 years logo.png"
                 alt="20 Years Logo"
                 className="w-36 h-auto"
               />
@@ -222,6 +225,8 @@ function Home() {
 
       <Accreditation />
 
+      {/* <Journey /> */}
+      {/* <JourneyCard /> */}
       <Journey />
 
       <TrustSection />

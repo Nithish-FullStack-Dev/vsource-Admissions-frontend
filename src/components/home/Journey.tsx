@@ -14,50 +14,50 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    desktop: "assets/images/universities/university-of-georgia.jpg",
-    mobile: "assets/images/universities/university-of-georgia-mobile.jpg",
+    desktop: "/images/universities/university-of-georgia.jpg",
+    mobile: "/images/universities/university-of-georgia-mobile.jpg",
     caption: "The University Of Georgia",
     ctaHref: "/mbbs-abroad/georgia/university-of-georgia",
     ctaText: "Explore More",
   },
   {
     desktop:
-      "assets/images/universities/ken-walker-international-university.jpg",
+      "/images/universities/ken-walker-international-university.jpg",
     mobile:
-      "assets/images/universities/ken-walker-international-university-mobile.jpg",
+      "/images/universities/ken-walker-international-university-mobile.jpg",
     caption: "Ken Walker International University",
     ctaHref: "/mbbs-abroad/georgia/ken-walker-international-university",
     ctaText: "Explore More",
   },
   {
-    desktop: "assets/images/universities/Tbilisi State Medical University.webp",
+    desktop: "/images/universities/Tbilisi State Medical University.webp",
     mobile:
-      "assets/images/universities/Tbilisi-State-Medical-University-mobile.jpg",
+      "/images/universities/Tbilisi-State-Medical-University-mobile.jpg",
     caption: "Tbilisi State Medical University",
     ctaHref: "/mbbs-abroad/georgia/tbilisi-state-medical-university",
     ctaText: "Explore More",
   },
   {
-    desktop: "assets/images/universities/ilia-state-university.jpg",
-    mobile: "assets/images/universities/ilia-state-university-mobile.jpg",
+    desktop: "/images/universities/ilia-state-university.jpg",
+    mobile: "/images/universities/ilia-state-university-mobile.jpg",
     caption: "Ilia State University",
     ctaHref: "/mbbs-abroad/georgia/ilia-state-university",
     ctaText: "Explore More",
   },
   {
     desktop:
-      "assets/images/universities/Akaki-Tsereteli-State-University-scaled.jpg",
+      "/images/universities/Akaki-Tsereteli-State-University-scaled.jpg",
     mobile:
-      "assets/images/universities/Akaki-Tsereteli-State-University-mobile.jpg",
+      "/images/universities/Akaki-Tsereteli-State-University-mobile.jpg",
     caption: "Akaki Tsereteli State University",
     ctaHref: "/mbbs-abroad/georgia/akaki-tsereteli-state-university",
     ctaText: "Explore More",
   },
   {
     desktop:
-      "assets/images/universities/Belgorod State National Research University.jpg",
+      "/images/universities/Belgorod State National Research University.jpg",
     mobile:
-      "assets/images/universities/Belgorod-State-National-Research-University-mobile.jpg",
+      "/images/universities/Belgorod-State-National-Research-University-mobile.jpg",
     caption: "Belgorod State National Research University",
     ctaHref: "/mbbs-abroad/russia/belgorod-state-national-research-university",
     ctaText: "Explore More",

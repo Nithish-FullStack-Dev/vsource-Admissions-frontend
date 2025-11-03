@@ -30,7 +30,7 @@ export function Footer() {
                 className="group"
               >
                 <img
-                  src="/assets/images/icons/fb.png"
+                  src="/images/icons/fb.png"
                   alt="Facebook"
                   className="w-16 h-16 hover:scale-110 transition-transform duration-300"
                 />
@@ -42,7 +42,7 @@ export function Footer() {
                 className="group"
               >
                 <img
-                  src="/assets/images/icons/insta.png"
+                  src="/images/icons/insta.png"
                   alt="Instagram"
                   className="w-16 h-16 hover:scale-110 transition-transform duration-300"
                 />
@@ -54,7 +54,7 @@ export function Footer() {
                 className="group"
               >
                 <img
-                  src="/assets/images/icons/yt.png"
+                  src="/images/icons/yt.png"
                   alt="YouTube"
                   className="w-16 h-16 hover:scale-110 transition-transform duration-300"
                 />
@@ -66,7 +66,7 @@ export function Footer() {
                 className="group"
               >
                 <img
-                  src="/assets/images/icons/linked in.png"
+                  src="/images/icons/linked in.png"
                   alt="LinkedIn"
                   className="w-16 h-16 hover:scale-110 transition-transform duration-300"
                 />

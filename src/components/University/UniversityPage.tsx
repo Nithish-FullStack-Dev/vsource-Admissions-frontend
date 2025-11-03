@@ -92,7 +92,7 @@ const MOCK_UNI = {
   country: "Georgia",
   recognitions: ["WHO", "NMC (India)", "WFME", "EHEA"],
   logo: "", // placeholder
-  hero: "/assets/images/gallery/imgi_6_un1.jpg", // placeholder
+  hero: "/images/gallery/imgi_6_un1.jpg", // placeholder
   highlights: [
     { label: "Established", value: "1918" },
     { label: "Program", value: "MBBS / MD (6 Years)" },
@@ -217,7 +217,7 @@ export default function UniversityPage() {
         className="relative bg-cover bg-center bg-no-repeat h-[400px] flex items-center justify-center"
         style={{
           backgroundImage:
-            "url('https://vsourceadmissions.com/assets/images/kenwalker/slider3.png')",
+            "url('https://vsourceadmissions.com/images/kenwalker/slider3.png')",
         }}
       >
         {/* Overlay */}
@@ -855,18 +855,18 @@ export default function UniversityPage() {
               <CardContent className="p-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
-                    "/assets/images/gallery/imgi_6_un1.jpg",
-                    "/assets/images/gallery/imgi_7_un2.jpg",
-                    "/assets/images/gallery/imgi_8_un33.jpg",
-                    "/assets/images/gallery/imgi_9_un4.jpg",
-                    "/assets/images/gallery/imgi_10_un55.jpg",
-                    "/assets/images/gallery/imgi_11_un6.jpg",
-                    "/assets/images/gallery/imgi_12_un7.jpg",
-                    "/assets/images/gallery/imgi_13_un8.jpg",
-                    "/assets/images/gallery/imgi_14_un9.jpg",
-                    "/assets/images/gallery/imgi_15_un10.jpg",
-                    "/assets/images/gallery/imgi_16_un11.jpg",
-                    "/assets/images/gallery/imgi_17_un133.jpg",
+                    "/images/gallery/imgi_6_un1.jpg",
+                    "/images/gallery/imgi_7_un2.jpg",
+                    "/images/gallery/imgi_8_un33.jpg",
+                    "/images/gallery/imgi_9_un4.jpg",
+                    "/images/gallery/imgi_10_un55.jpg",
+                    "/images/gallery/imgi_11_un6.jpg",
+                    "/images/gallery/imgi_12_un7.jpg",
+                    "/images/gallery/imgi_13_un8.jpg",
+                    "/images/gallery/imgi_14_un9.jpg",
+                    "/images/gallery/imgi_15_un10.jpg",
+                    "/images/gallery/imgi_16_un11.jpg",
+                    "/images/gallery/imgi_17_un133.jpg",
                   ].map((i) => (
                     <div
                       key={i}
