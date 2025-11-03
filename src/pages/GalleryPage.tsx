@@ -28,6 +28,7 @@ const GalleryPage = () => {
   } = useQuery<Gallery>({
     queryKey: ["gallery"],
     queryFn: fetchGallery,
+    staleTime: Infinity,
   });
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const GalleryPage = () => {
   if (isLoading || !gallery) {
     return <BannerSkeleton />;
   }
+
   const journeyBlock = gallery?.blocks?.find(
     (block) => block?.__component === "gallery.journey-images"
   );
@@ -91,42 +93,12 @@ const GalleryPage = () => {
             </div>
           </div>
 
-          {/* 360° Tour - Always visible (not part of tabs anymore) */}
-          {activeTab === "all" && view360Url && (
-            <section className="mb-16">
-              <SectionTitle
-                title={view360?.title || "Virtual Office Tours"}
-                subtitle={
-                  view360?.subheading ||
-                  "Take a 360° tour of our main offices across India"
-                }
-              />
-              <AnimateOnScroll>
-                <div className="mt-10 max-w-4xl mx-auto">
-                  <div className="bg-white p-6 rounded-xl shadow-md">
-                    <div className="relative aspect-video overflow-hidden rounded-lg">
-                      <iframe
-                        src={
-                          view360Url || "https://vsourceadmissions.com/360View"
-                        }
-                        title="Hyderabad Office Virtual Tour"
-                        className="w-full h-full border-0 rounded-lg"
-                        allow="accelerometer; gyroscope; fullscreen"
-                        allowFullScreen
-                      />
-                    </div>
-                  </div>
-                </div>
-              </AnimateOnScroll>
-            </section>
-          )}
-
           {/* Student Success Section */}
           {(activeTab === "students" || activeTab === "all") && (
             <Successstories />
           )}
 
-          {/* Regular Gallery Grid */}
+          {/* Regular Gallery Grid — hide when a location tab is active */}
           {activeTab !== "students" && journeyImages.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {journeyImages.map((item, index) => (
@@ -134,7 +106,7 @@ const GalleryPage = () => {
                   <div className="bg-white rounded-lg overflow-hidden shadow-md group relative">
                     <div className="relative h-64 overflow-hidden">
                       <img
-                        src={item.url}
+                        src={`${import.meta.env.VITE_CMS_GLOBALURL}${item.url}`}
                         alt={item.name || "Gallery Photo"}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
