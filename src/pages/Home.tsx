@@ -1,12 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { Link as RouterLink } from "react-router-dom";
 import AboutSection from "./AboutSection";
 import Accreditation from "./AccreditationSection";
+// import Journey from "@/components/home/Journey";
 import TrustSection from "@/components/home/TrustSection";
 import CertificateSlider from "@/components/home/CertificateSlider";
 import VideoSection from "@/components/VideoSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+// import JourneyCard from "@/utils/JourneyCard";
+import { PopupModal } from "react-calendly";
+
 import Journey from "@/pages/Journet.tsx";
+import VideoCarousel from "@/components/home/VideoCarousel";
 
 type Slide = {
   img: string;
@@ -61,6 +67,7 @@ function Home() {
   const prefersReducedMotion = useReducedMotion();
   const timerRef = useRef<number | null>(null);
   const loadedRef = useRef<{ [key: number]: boolean }>({});
+  const [openCalendly, setOpenCalendly] = useState(false);
 
   const start = useCallback(() => {
     if (timerRef.current) window.clearInterval(timerRef.current);
@@ -113,7 +120,9 @@ function Home() {
   };
 
   const fadeDur = prefersReducedMotion ? 0 : 0.9;
-
+  const handleGoVirtual = () => {
+    setOpenCalendly(true);
+  };
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -122,7 +131,7 @@ function Home() {
         <div
           className="hidden sm:block absolute inset-0 bg-no-repeat bg-cover bg-center shrink-0"
           style={{
-            backgroundImage: `url(/images/admission-banner.jpg)`,
+            backgroundImage: url(/images/admission-banner.jpg),
           }}
         >
           <div className="absolute inset-0 bg-black/20" />
@@ -133,7 +142,7 @@ function Home() {
           <div
             className="absolute inset-0 bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: `url(/images/admission-mobile.jpg)`,
+              backgroundImage: url(/images/admission-mobile.jpg),
             }}
           >
             {/* <div className="absolute inset-0 bg-black/60" /> */}
@@ -172,10 +181,24 @@ function Home() {
                 />
                 <div className="mt-4 flex flex-wrap gap-3">
                   <a
-                    href="#apply"
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-red-600 text-white text-sm hover:bg-white hover:text-red-600 transition-colors"
+                    onClick={handleGoVirtual}
+                    className="bg-red-600 text-white  rounded-md font-semibold text-sm p-2 hover:bg-white transition-colors hover:text-red-600  flex items-start space-x-2 cursor-pointer"
                   >
-                    Book Free Counseling
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    <span>Book Free Counseling</span>
                   </a>
                 </div>
               </div>
@@ -184,18 +207,17 @@ function Home() {
         </div>
 
         {/* === Desktop Layout === */}
-        <div className="hidden sm:flex relative z-10 items-center h-[70svh] md:h-[85svh] lg:h-[90svh] min-h-[420px] max-h-[900px]">
+        <div className="hidden sm:flex relative  items-center mt-28 mb-10 ">
           <div className="w-full mx-auto max-w-screen-xl px-4 sm:px-6 text-white text-left">
             <h1 className="font-bold text-[clamp(28px,6vw,56px)] leading-tight">
               Study MBBS Abroad
             </h1>
             <p className="mt-4 text-white/90 text-[clamp(14px,4vw,20px)] max-w-[90vw] sm:max-w-xl">
-              Pursue your dream of becoming a doctor with world-class medical
-              education in{" "}
+              Become a doctor in{" "}
               <span className="font-semibold text-red-600">Georgia</span> and{" "}
               <span className="font-semibold text-red-600">Russia</span>.
-              Affordable tuition fees, globally recognized universities, and
-              safe, welcoming environments await you.
+              Top-ranked universities, affordable fees, and a safe, welcoming
+              student
             </p>
             <div className="flex justify-start pt-6">
               <img
@@ -206,12 +228,44 @@ function Home() {
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="#apply"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-red-600 text-white text-sm md:text-base hover:bg-white hover:text-red-600 transition-colors"
+                onClick={handleGoVirtual}
+                className="bg-red-600 text-white   px-6 py-3 rounded-md font-semibold text-lg hover:bg-white transition-colors hover:text-red-600  flex items-center space-x-2 cursor-pointer"
               >
-                Book Free Counseling
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <span>Book Free Counseling</span>
               </a>
             </div>
+            {/* Rating Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.5 }}
+              className="flex flex-wrap items-center gap-4 pt-4"
+            >
+              <div className="flex items-center space-x-1">
+                <span className="text-yellow-400 text-lg">★★★★★</span>
+                <span className="text-sm text-white">4.9/5 Rating</span>
+              </div>
+              <div className="text-sm font-semibold text-white">
+                100,000+ Students Guided
+              </div>
+              <div className="text-sm font-semibold text-white">
+                250+ Global University Partners
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -226,11 +280,20 @@ function Home() {
 
       <TrustSection />
 
-      <CertificateSlider />
+      <CertificateBentoGrid />
 
       <VideoSection />
-
+      <VideoCarousel />
       <TestimonialsSection />
+
+      {/* {showPopup && <DelayedPopup onMinimize={handleMinimize} />} */}
+      <PopupModal
+        url="https://calendly.com/server-vsourceoverseas/30min"
+        open={openCalendly}
+        onModalClose={() => setOpenCalendly(false)}
+        rootElement={document.getElementById("root")}
+        pageSettings={{ hideEventTypeDetails: false }}
+      />
     </div>
   );
 }
