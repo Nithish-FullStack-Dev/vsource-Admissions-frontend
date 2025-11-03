@@ -131,7 +131,7 @@ function Home() {
         <div
           className="hidden sm:block absolute inset-0 bg-no-repeat bg-cover bg-center shrink-0"
           style={{
-            backgroundImage: url(/images/admission-banner.jpg),
+            backgroundImage: `url(/images/admission-banner.jpg)`,
           }}
         >
           <div className="absolute inset-0 bg-black/20" />
@@ -142,7 +142,7 @@ function Home() {
           <div
             className="absolute inset-0 bg-no-repeat bg-cover bg-center"
             style={{
-              backgroundImage: url(/images/admission-mobile.jpg),
+              backgroundImage: `url(/images/admission-mobile.jpg)`,
             }}
           >
             {/* <div className="absolute inset-0 bg-black/60" /> */}
@@ -280,7 +280,7 @@ function Home() {
 
       <TrustSection />
 
-      <CertificateBentoGrid />
+      <CertificateSlider />
 
       <VideoSection />
       <VideoCarousel />
