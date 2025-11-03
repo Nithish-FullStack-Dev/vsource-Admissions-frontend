@@ -1,196 +1,26 @@
-// src/types/LandingPage.ts
-
-// ---------- Media ----------
-export interface Media {
-  id: number;
-  documentId: string;
-  url: string;
-  name: string;
-  alternativeText?: string | null;
-}
-
-// ---------- Basic ----------
-export interface Basic {
+export interface AboutUs {
   id: number;
   title: string;
-  description: string;
+  SubTitle_1: string;
+  SubTitle_2: string;
+  SubTitle_3: string;
+  about_list: AboutList[];
+  About_us_count: AboutUsCount[];
+  chairmanImage: Image;
 }
 
-// ---------- About Us ----------
-export interface AboutUsContent {
+export interface AboutList {
   id: number;
-  title: string;
-  sub_title: string;
-  gif: Media | null;
+  about_text: string;
+  bold_text: string;
+  Image_or_gif: Image;
 }
 
-export interface AboutNumber {
+export interface AboutUsCount {
   id: number;
+  About_text: string;
   count: string;
-  text: string;
-  image: Media;
-}
-
-export interface AboutUsBlock {
-  __component: "fintech.about-us";
-  id: number;
-  heading: string;
-  content: AboutUsContent[];
-  about_number: AboutNumber[];
-  chairman: Media;
-}
-
-// ---------- Loan Disbursement ----------
-export interface Scholarship {
-  id: number;
-  student_name: string;
-  amount: string;
-  country: string;
-  image: Media;
-}
-
-export interface LoanDisbursementBlock {
-  __component: "fintech.loan-disbursement";
-  id: number;
-  title: string;
-  sub_title: string;
-  scholarship: Scholarship[];
-}
-
-// ---------- Why Loan ----------
-export interface WhyLoanList {
-  id: number;
-  lists: string;
-}
-
-export interface WhyLoanSuccess {
-  id: number;
-  title: string;
-  description: string;
-}
-
-export interface WhyLoanBlock {
-  __component: "fintech.why-loan";
-  id: number;
-  heading: string;
-  sub_title: string;
-  image_background: Media | null;
-  list_text: WhyLoanList[];
-  success_number: WhyLoanSuccess[];
-}
-
-// ---------- Banks ----------
-export interface Bank {
-  id: number;
-  name: string;
-  slug: string;
-  path: string;
-  logo: Media;
-}
-
-export interface BanksBlock {
-  __component: "fintech.banks";
-  id: number;
-  heading: string;
-  description: string;
-  bank: Bank[];
-}
-
-// ---------- Services ----------
-export interface ServiceItem {
-  id: number;
-  title: string;
-  description: string;
-  image: Media;
-}
-
-export interface ServicesBlock {
-  __component: "blocks.services";
-  id: number;
-  title: string;
-  services_list: ServiceItem[];
-}
-
-// ---------- Comprehensive ----------
-export interface ComprehensiveCard {
-  id: number;
-  title: string;
-  description: string;
-  external_url: string;
-  image: Media;
-  logo: Media;
-}
-
-export interface ComprehensiveBlock {
-  __component: "blocks.comprehensive";
-  id: number;
-  title: string;
-  description: string;
-  cards: ComprehensiveCard[];
-}
-
-// ---------- Company ----------
-export interface CompanyBlock {
-  __component: "blocks.company";
-  id: number;
-  title: string;
-  description: string;
-  thumbnail: Media;
-  video: Media | null;
-}
-
-// ---------- Testimonials ----------
-export interface Image {
-  id: number;
-  documentId: string;
-  url: string;
-  alternativeText: string | null;
-  name?: string;
-}
-
-export interface Testimonial {
-  id: number;
-  name: string;
-  feedback: string;
-  image: Image;
-}
-
-export interface Testimonials {
-  basic: Basic;
-  testimonials: Testimonial[];
-}
-
-// ---------- Union of Blocks ----------
-export type Block =
-  | AboutUsBlock
-  | LoanDisbursementBlock
-  | WhyLoanBlock
-  | BanksBlock
-  | ServicesBlock
-  | ComprehensiveBlock
-  | CompanyBlock;
-
-// ---------- Landing Page ----------
-export interface LandingPage {
-  id: number;
-  documentId: string;
-  title: string;
-  sub_title: string;
-  mobile_sub_title: string;
-  country_names: string[];
-  background_image: Media;
-  mobile_bg_img: Media;
-  blocks: Block[];
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-}
-
-//! About Us
-
-export interface Description {
-  id: number;
-  description: string;
+  image_or_gif: Image;
 }
 
 export interface AboutUsCounts {
@@ -199,6 +29,68 @@ export interface AboutUsCounts {
   image: Image;
   text: string;
 }
+
+export interface Image {
+  id: number;
+  documentId: string;
+  url: string;
+  alternativeText: string | null;
+  name?: string;
+}
+
+//! Cources Section
+
+export interface Courses {
+  id: number;
+  title: string;
+  description: string;
+  study_cards: StudyCards[];
+}
+
+export interface StudyCards {
+  id: number;
+  tag: string;
+  country: string;
+  image: Image;
+  descriptions: Description[];
+  url?: string;
+}
+
+export interface Description {
+  id: number;
+  description: string;
+}
+
+//! Comprehensive
+
+export interface Comprehensive {
+  id: number;
+  title: string;
+  description: string;
+  cards: ComprehensiveCard[];
+}
+
+export interface ComprehensiveCard {
+  id: number;
+  title: string;
+  description: string;
+  external_url: string;
+  image: Image;
+  logo: Image;
+}
+
+//! Company Video
+
+export interface Company {
+  title: string;
+  description: string;
+  thumbnail: Image;
+  video: Image;
+}
+
+//*ABOUT US
+
+//! BANNER
 
 export interface AboutUsBanner {
   id: number;
@@ -224,7 +116,9 @@ export interface AboutSectionProps {
 }
 
 export interface Members {
-  basic: Basic;
+  id: number;
+  title: string;
+  description: string;
   members: Member[];
 }
 
@@ -233,5 +127,36 @@ export interface Member {
   name: string;
   position: string;
   bio: string;
+  image: Image;
+}
+
+//! Testimonials
+
+export interface Testimonials {
+  id: number;
+  title: string;
+  description: string;
+  testimonials: Testimonial[];
+}
+
+export interface Testimonial {
+  id: number;
+  name: string;
+  feedback: string;
+  image: Image;
+}
+
+//! Service
+
+export interface Service {
+  id: number;
+  title: string;
+  services_list: Services_list[];
+}
+
+export interface Services_list {
+  id: number;
+  title: string;
+  description: string;
   image: Image;
 }
