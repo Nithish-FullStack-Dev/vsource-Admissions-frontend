@@ -3,9 +3,7 @@ import SectionTitle from "@/components/SectionTitle";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import styled from "styled-components";
 import AboutSection from "./AboutSection";
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import { Members } from "@/lib/types/LandingPage";
+import { useTeamMembers } from "@/lib/types/LandingPage";
 import { toast } from "sonner";
 import TeamSkeleton from "@/Loaders/about-us/TeamSkeleton";
 
@@ -144,25 +142,13 @@ const StyledTeamWrapper = styled.div`
     }
   }
 `;
-
-const fetchMembers = async () => {
-  const url = `${
-    import.meta.env.VITE_CMS_GLOBALURL
-  }/api/about-us?populate[about][on][about-us.management-team][populate][members][populate][image][fields][0]=url&populate[about][on][about-us.management-team][populate][members][populate][image][fields][1]=alternativeText`;
-  const res = await axios.get(url);
-  return res?.data?.data?.about[0];
-};
 const AboutPage = () => {
   const {
     data: members,
     isLoading: memberLoading,
     isError: memberError,
     error: memberErr,
-  } = useQuery<Members>({
-    queryKey: ["members"],
-    queryFn: fetchMembers,
-    staleTime: Infinity,
-  });
+  } = useTeamMembers();
 
   useEffect(() => {
     window.scrollTo(0, 0);

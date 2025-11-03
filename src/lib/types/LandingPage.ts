@@ -1,3 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
 export interface AboutUs {
   id: number;
   title: string;
@@ -91,6 +94,22 @@ export interface Company {
 //*ABOUT US
 
 //! BANNER
+
+export const fetchMembers = async () => {
+  const url = `${
+    import.meta.env.VITE_CMS_GLOBALURL
+  }/api/about-us?populate[about][on][about-us.management-team][populate][members][populate][image][fields][0]=url&populate[about][on][about-us.management-team][populate][members][populate][image][fields][1]=alternativeText`;
+  const res = await axios.get(url);
+  return res?.data?.data?.about[0];
+};
+
+export const useTeamMembers = () => {
+  return useQuery<Members>({
+    queryKey: ["members"],
+    queryFn: fetchMembers,
+    staleTime: Infinity,
+  });
+};
 
 export interface AboutUsBanner {
   id: number;
