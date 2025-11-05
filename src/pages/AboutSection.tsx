@@ -132,7 +132,7 @@ const AboutSection: React.FC = () => {
             <img
               src="https://vsourcevarsity.com/assets/images/founder.webp"
               alt="Founder"
-              className="rounded-lg w-full max-w-md object-cover aspect-[4/3] sm:aspect-[3/2]"
+              className="rounded-lg w-full max-w-md object-cover"
             />
             <p className="mt-3 sm:mt-4 text-sm md:text-base text-gray-700 italic max-w-prose">
               <strong className="text-xl">“</strong>

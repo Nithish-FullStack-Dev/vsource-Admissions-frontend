@@ -29,6 +29,9 @@ import UniversityIliaState from "./pages/University-Pages/UniversityIliaState";
 import UniversityAkakiTsereteliState from "./pages/University-Pages/UniversityAkakiTsereteliState";
 import UniversityBelgorodStateNationalResearch from "./pages/University-Pages/UniversityBelgorodStateNationalResearch";
 import HeroLoader from "./components/loaders/HeroLoader";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import Disclaimer from "./pages/Disclaimer";
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const View360 = lazy(() => import("./pages/View360"));
 
@@ -123,6 +126,12 @@ const AppContent = () => {
 
               <Route path="/meeting" element={<GoVirtual />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
+              <Route path="/disclaimer" element={<Disclaimer />} />
             </Routes>
           </Suspense>
         </main>

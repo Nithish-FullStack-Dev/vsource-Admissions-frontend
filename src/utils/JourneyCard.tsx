@@ -1,7 +1,7 @@
 "use client";
 import styles from "./style.module.css";
 import { useTransform, motion, useScroll } from "framer-motion";
-import { ArrowBigLeft, ArrowBigRightDash } from "lucide-react";
+import { ArrowBigRightDash } from "lucide-react";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,9 +25,14 @@ const JourneyCard = ({
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-
+  const lastIndex = 5;
   return (
-    <div ref={container} className={styles.cardContainer}>
+    <div
+      ref={container}
+      className={`${styles.cardContainer} ${
+        i === lastIndex ? styles.notSticky : ""
+      }`}
+    >
       <motion.div
         style={{
           scale,
