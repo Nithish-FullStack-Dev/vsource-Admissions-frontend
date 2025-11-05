@@ -1,10 +1,10 @@
 .cardContainer {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
-  top: 80px;
+  top: 14%;
   padding: 0;
   margin: 0;
 }
@@ -106,8 +106,15 @@
   border-color: white;
   padding-bottom: 2px;
 }
-
+/* @media (max-width: 1350px) {
+  .cardContainer {
+    margin-bottom: 150px;
+  }
+} */
 @media (max-width: 768px) {
+  .cardContainer {
+    top: 5%;
+  }
   .card {
     width: 90vw;
     height: 480px;
@@ -125,4 +132,7 @@
   .description p::first-letter {
     font-size: 28px;
   }
+}
+.notSticky{
+  position: relative !important;
 }
