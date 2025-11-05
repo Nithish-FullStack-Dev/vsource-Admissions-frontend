@@ -1,4 +1,18 @@
 .main {
   position: relative;
   /* margin-top: 50vh; */
+      /* margin:  0 0 120px 0; */
+      margin-bottom: 8%;
 }
+@media (max-width: 768px) {
+  .main {
+    margin-bottom: 10%;
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    margin-bottom: 12%;
+  }
+}
+
+

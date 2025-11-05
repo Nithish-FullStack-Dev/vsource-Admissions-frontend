@@ -257,16 +257,23 @@ export function Footer() {
           </p>
           <div className="flex justify-center md:justify-end space-x-6">
             <Link
-              to="https://vsourceadmissions.com/Privacy"
+              to="/privacy-policy"
               className="text-gray-400 hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
+
             <Link
-              to="https://vsourceadmissions.com/Terms"
+              to="/terms-and-conditions"
               className="text-gray-400 hover:text-white transition-colors"
             >
-              Terms of Service
+              Terms and Conditions
+            </Link>
+            <Link
+              to="/disclaimer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Disclaimer
             </Link>
           </div>
         </div>
