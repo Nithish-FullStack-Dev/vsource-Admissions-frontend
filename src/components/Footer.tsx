@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 const currentYear = new Date().getFullYear();
 function Footer() {
   return (
-    <footer className="bg-[rgb(10,11,26)] text-white pt-6 pb-6">
+    <footer className="bg-[rgb(10,11,26)] text-white pt-6 pb-6 overflow-hidden">
       <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -139,7 +139,7 @@ function Footer() {
                 <Phone className="w-5 h-5 mr-3 text-primary" />
                 <span className="text-gray-400">+91 99126 11119</span>
               </li>
-              <li className="flex items-center">
+              <li className="flex items-center flex-wrap">
                 <Mail className="w-5 h-5 mr-3 text-primary" />
                 <span className="text-gray-400">
                   Support@vsourceadmissions.com
